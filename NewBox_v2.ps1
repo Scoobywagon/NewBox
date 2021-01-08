@@ -36,7 +36,11 @@ $packagecount = $software.Count + 1
 
 Write-progress -Activity 'Installing base packages' -Status 'Installing Chocolatey' -PercentComplete (($counter/$packagecount)*100)
 #Check if Choco is installed.  If not, do so.
-$testchoco = powershell choco -v
+$testchoco = $false
+If (Get-Command choco.exe -ErrorAction SilentlyContinue){
+    $testchoco = $true
+}
+
 if(-not($testchoco)){
     Write-Host "Installing Chocolatey"
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
