@@ -17,7 +17,7 @@ function Install-Package {
     )
 
     #Write-Host -nonewline "Installing $installer ... "
-    choco install $installer -yr --no-progress > C:\ProgramData\chocolatey\logs\choco_install.log
+    choco install $installer -y --no-progress > C:\ProgramData\chocolatey\logs\choco_install.log
     #Write-Host "Done"
 
 }
