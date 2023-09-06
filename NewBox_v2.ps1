@@ -52,7 +52,7 @@ else{
     $counter++
     
     #since Choclatey is already installed, lets get a list of anything else installed
-    $installedpackages = choco list -lo
+    $installedpackages = choco list
 }
 
 FOREACH ($package in $software) {
